@@ -8,17 +8,30 @@ $('.glyphicon-plus').on('click', function () {
   }else {
     alert('invalid input');
   }
-
 });
+
+
+$('ul').on('click', 'li .close', function(event) {
+    $(event.target.parentElement).remove();
+  //  console.log(event.target.parentElement.id);
+    var deleteReminder1 = new deleteReminder(event.target.parentElement.id);
+    deleteReminder1.deleteDataFromLocalStoarge();
+});
+
+
 };
+
+
+
 
 function render(arr){
   for(var i=0;i<arr.length;i++){
   var note=arr[i].title;
   var date=arr[i].date;
   var time=arr[i].time;
-  //$('#myUL').append('<li>'+note+' '+date+' '+time+'</li>');]
-  $('#myUL').append('<li>'+note+' '+date+' '+time+'<span class="close glyphicon glyphicon-remove-sign"></span></li>');
+  var id= arr[i].id;
+  $('#myUL').append('<li id='+id+'>'+note+' '+date+' '+time+'<span class="close glyphicon glyphicon-remove-sign"></span></li>');
+
 }
 }
 

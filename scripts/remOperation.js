@@ -28,14 +28,31 @@ var databaseManager = function () {
       }
 
     }
-
 };
+
+
+
+
+var deleteReminder = function(id){
+    this.deleteDataFromLocalStoarge = function () {
+        var arr=[];
+        var flag;
+        arr=JSON.parse(localStorage.getItem('reminder_List'));
+        for(var i = 0 ; i < arr.length ; i++){
+            if(arr[i].id == id){
+              flag = i;
+            }
+        }
+        
+        console.log(arr.splice(flag, 1));
+        console.log(arr);      
+         localStorage.setItem('reminder_List',JSON.stringify(arr));
+    };
+};
+
 var fetch=function(){
         var storedNames = JSON.parse(localStorage.getItem("reminder_List"));
         if(storedNames !== null){
-            // console.log("peye gchi huraah!!!");
-
-            // console.log(storedNames);
             render(storedNames);
         }else {
           console.log('kichu neu');
