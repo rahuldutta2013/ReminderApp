@@ -8,7 +8,7 @@ var alarmOpt = function (obj) {
             document.getElementById('xyz').play();
             $('#id01').show();
             $('#'+id).css('text-decoration','line-through');
-            
         }, timeDiff);
     };
+    
 }

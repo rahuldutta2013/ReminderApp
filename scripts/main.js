@@ -37,10 +37,24 @@ function render(arr) {
     var date = arr[i].date;
     var time = arr[i].time;
     var id = arr[i].id;
-    var timeDiff = arr[i].timeDiff;
-    console.log(timeDiff);
-    $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + '<span class="close glyphicon glyphicon-remove-sign"></span></li>');
+
+    var rHr=parseInt(time.substring(0,2));
+    var rMin=parseInt(time.substring(3,7));
+    var timeCal = new timeCalculation(date,rHr,rMin);
+    var currTimeDiff = timeCal.totalTimeDiff;
+
+if(currTimeDiff > 0){
+  setTimeout(function () {
+              document.getElementById('xyz').play();
+              $('#id01').show();
+              $('#'+id).css('text-decoration','line-through');              
+          }, currTimeDiff);
+}
+          console.log(currTimeDiff);
+    $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + 
+    '<span class="close glyphicon glyphicon-remove-sign"></span></li>');
   }
+  
 }
 
 $(document).ready(function () {
