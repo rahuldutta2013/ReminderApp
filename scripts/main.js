@@ -43,16 +43,20 @@ function render(arr) {
     var timeCal = new timeCalculation(date,rHr,rMin);
     var currTimeDiff = timeCal.totalTimeDiff;
 
-if(currTimeDiff > 0){
-  setTimeout(function () {
-              document.getElementById('xyz').play();
-              $('#id01').show();
-              $('#'+id).css('text-decoration','line-through');              
-          }, currTimeDiff);
-}
-          console.log(currTimeDiff);
-    $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + 
+    if(currTimeDiff > 0){
+      setTimeout(function () {
+                  document.getElementById('xyz').play();
+                  $('#id01').show();
+                  $('#'+id).css('text-decoration','line-through');              
+              }, currTimeDiff);
+              $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + 
     '<span class="close glyphicon glyphicon-remove-sign"></span></li>');
+  }else{
+     $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + 
+    '<span class="close glyphicon glyphicon-remove-sign"></span></li>');
+      $('#'+id).css('text-decoration','line-through');
+    }
+    
   }
   
 }
