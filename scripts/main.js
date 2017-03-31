@@ -47,6 +47,7 @@ function render(arr) {
       setTimeout(function () {
                   document.getElementById('xyz').play();
                   $('#id01').show();
+                  $('.w3-container p').text(note);
                   $('#'+id).css('text-decoration','line-through');              
               }, currTimeDiff);
               $('#myUL').append('<li id=' + id + '>' + note + '&nbsp&nbsp' + date + '&nbsp&nbsp' + time + 

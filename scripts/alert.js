@@ -6,9 +6,10 @@ var alarmOpt = function (obj) {
     this.set = function () {
         setTimeout(function () {
             document.getElementById('xyz').play();
+            $('.w3-container p').text(text);
             $('#id01').show();
             $('#'+id).css('text-decoration','line-through');
         }, timeDiff);
     };
-    
+
 }
