@@ -62,6 +62,16 @@ function render(arr) {
   
 }
 
+var fetch=function(){
+        var storedNames = JSON.parse(localStorage.getItem("reminder_List"));
+        if(storedNames !== null){
+            render(storedNames);
+        }else {
+          console.log('kichu neu');
+        }
+
+    }
+
 $(document).ready(function () {
   bindEvents();
   fetch();

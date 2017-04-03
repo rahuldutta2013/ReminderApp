@@ -1,7 +1,7 @@
  
 var  timeCalculation = function(remiderDate,reminderHr,reminderMin){
     
-        today = new Date();
+       var today = new Date();
         var currdd = today.getDate();
         var currmm = today.getMonth(); //January is 0!
         var curryyyy =today.getFullYear();
