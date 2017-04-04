@@ -1,4 +1,5 @@
-var parseInput=function($,textBoxId,dateIpId,timeIpId){
+//function to get value from input
+var ParseInput=function($,textBoxId,dateIpId,timeIpId){
     this.text=$('#'+textBoxId).val();
     this.date=$('#'+dateIpId).val();
     this.time=$('#'+timeIpId).val(); 
