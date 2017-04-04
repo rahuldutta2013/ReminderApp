@@ -13,41 +13,40 @@
 
 <body>
 
+<!--input section-->
   <div id="myDIV" class="header">
     <h2 style="margin:5px">Reminder</h2>
     <input type="text" id='reminderText' placeholder="Title...">
     <input type="date" id='date'>
     <input type="time" id='time'>
-
     <button class="glyphicon glyphicon-plus"></button>
   </div>
 
+<!--reminderList-->
   <ul id="myUL">
   </ul>
-  <audio id="xyz" src="audio/ringtone.mp3" preload="auto"></audio>
 
-  
-<div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright close">&times;</span>
+<!--reminder popup-->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content height">
+      <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright close">&times;</span>
       </header>
       <div class="w3-container">
         <p></p>
       </div>
     </div>
-    </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="scripts/diffCalc.js"></script>
   <script src="scripts/main.js"></script>
-    <script src="scripts/reminder.js"></script>
+  <script src="scripts/reminder.js"></script>
   <script src="scripts/parseInput.js"></script>
-    <script src="scripts/remOperation.js"></script>
-    <script src="scripts/alert.js"></script>
-     
-  
+  <script src="scripts/dbManager.js"></script>
+  <script src="scripts/watcher.js"></script>
+
+
 </body>
 
 </html>
